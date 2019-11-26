@@ -1,0 +1,10 @@
+name: Rings
+main: me.oribuin.main.Rings
+version: 1.0.0
+author: Oribuin
+api-version: 1.13
+description: A custom plugin created by Oribuin for Ring Effects.
+commands:
+  Rings:
+    permission: rings.open
+    usage: /rings
