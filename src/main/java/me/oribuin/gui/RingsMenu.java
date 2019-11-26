@@ -79,7 +79,7 @@ public class RingsMenu implements InventoryHolder, Listener {
         if (e.getInventory().getHolder() != this) {
             return;
         }
-        // If you try to quick grab items using number keys cancel it.
+        // If you try to quick grab items using number keys cancel it
         if (e.getClick().equals(ClickType.NUMBER_KEY)) {
             e.setCancelled(true);
         }
@@ -92,7 +92,7 @@ public class RingsMenu implements InventoryHolder, Listener {
         // Get the item that was clicked
         ItemStack clickedItem = e.getCurrentItem();
 
-        // If clicked item is gone or the item is air.
+        // If clicked item is gone or the item is air
         if (clickedItem == null || clickedItem.getType() == Material.AIR) return;
         if (e.getRawSlot() == 10) p.sendMessage("You clicked slot " + 10);
     }

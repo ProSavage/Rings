@@ -17,13 +17,13 @@ public class MainCommand implements CommandExecutor {
             // Get the player
             Player player = (Player) sender;
 
-            // Create Menu variable.
+            // Create Menu variable
             RingsMenu menu = new RingsMenu();
-            // Open Inventory.
+            // Open the GUI
             menu.onInventory(player);
-            // If sender isn't a player.
+            // If sender isn't a player
         } else {
-            // Send message to console.
+            // Send message to console
             Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.RED + "[Rings] You cannot use this command in console.");
         }
         return true;
