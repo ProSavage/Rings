@@ -8,4 +8,4 @@ commands:
   Rings:
     permission: rings.open
     usage: /rings
-    description: Opens the Rings Menu
+    description: Opens the Rings Menu.

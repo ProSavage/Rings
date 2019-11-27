@@ -27,28 +27,28 @@ public class RingsMenu implements InventoryHolder, Listener {
 
     public void initializeItems() {
         // Info Book
-        inv.addItem(createGuiItem(Material.KNOWLEDGE_BOOK, "§eInfo Book", "§7Welcome to the Rings Menu."));
+        inv.addItem(createGuiItem(4,  Material.KNOWLEDGE_BOOK, "§eInfo Book", "§7Welcome to the Rings Menu.", "§eClick me for more Info!"));
         // Healing Ring
-        inv.addItem(createGuiItem(Material.GHAST_TEAR, "§eHealing Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(10, Material.GHAST_TEAR, "§eHealing Ring", "§7Click me to Select.", "\n§Available."));
         // Agility Ring
-        inv.addItem(createGuiItem(Material.FEATHER, "§eAgility Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(11, Material.FEATHER, "§eAgility Ring", "§7Click me to Select.", "\n§Available."));
         // Fire Ring
-        inv.addItem(createGuiItem(Material.BLAZE_POWDER, "§eFire Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(12, Material.BLAZE_POWDER, "§eFire Ring", "§7Click me to Select.", "\n§Available."));
         // Vision Ring
-        inv.addItem(createGuiItem(Material.DIAMOND_HELMET, "§eVision Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(13, Material.DIAMOND_HELMET, "§eVision Ring", "§7Click me to Select.", "\n§Available."));
         // Brute Ring
-        inv.addItem(createGuiItem(Material.DIAMOND_SWORD, "§eBrute Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(14, Material.DIAMOND_SWORD, "§eBrute Ring", "§7Click me to Select.", "\n§Available."));
         // Spring Ring
-        inv.addItem(createGuiItem(Material.RABBIT_FOOT, "§eSpring Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(15, Material.RABBIT_FOOT, "§eSpring Ring", "§7Click me to Select.", "\n§Available."));
         // Aqua Ring
-        inv.addItem(createGuiItem(Material.PUFFERFISH, "§eAqua Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(16, Material.PUFFERFISH, "§eAqua Ring", "§7Click me to Select.", "\n§Available."));
         // Remove Effects
-        inv.addItem(createGuiItem(Material.POTION, "§cClear Ring", "§7Click me to clear Ring."));
+        inv.addItem(createGuiItem(22, Material.POTION, "§cClear Ring", "§7Click me to clear Ring."));
     }
 
-    private ItemStack createGuiItem(Material material, String name, String...lore) {
+    private ItemStack createGuiItem(int slot, Material material, String name, String...lore) {
         // Set the Material and amount
-        ItemStack item = new ItemStack(material, 64);
+        ItemStack item = new ItemStack(material, 1);
         // Get the meta of Item.
         ItemMeta meta = item.getItemMeta();
         // Set the name
@@ -65,6 +65,7 @@ public class RingsMenu implements InventoryHolder, Listener {
         meta.setLore(metalore);
         // Complete The Meta.
         item.setItemMeta(meta);
+        inv.setItem(slot, item);
         return item;
     }
 
