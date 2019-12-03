@@ -1,8 +1,6 @@
 package me.oribuin.gui;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,6 +10,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -22,50 +21,61 @@ public class RingsMenu implements InventoryHolder, Listener {
 
     public RingsMenu() {
         // Create GUI with Size and Name.
-        inv = Bukkit.createInventory(this, 27, ChatColor.DARK_GRAY + "Rings Menu by Oribuin.");
+        inv = Bukkit.createInventory(this, 27, ChatColor.DARK_GRAY + "Rings Plugin by Oribuin.");
     }
 
+    @NotNull
+    @Override
+    public Inventory getInventory() {
+        return inv;
+    }
+
+    @EventHandler
     public void initializeItems() {
         // Info Book
-        inv.addItem(createGuiItem(4,  Material.KNOWLEDGE_BOOK, "§eInfo Book", "§7Welcome to the Rings Menu.", "§eClick me for more Info!"));
+        inv.addItem(createGuiItem(4, Material.KNOWLEDGE_BOOK,1, "§eInfo Book", "§7Welcome to the Rings Menu.", "§eClick me for more Info!"));
         // Healing Ring
-        inv.addItem(createGuiItem(10, Material.GHAST_TEAR, "§eHealing Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(10, Material.GHAST_TEAR,1, "§eHealing Ring", "§7Click me to Select.", "\n§Available."));
         // Agility Ring
-        inv.addItem(createGuiItem(11, Material.FEATHER, "§eAgility Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(11, Material.FEATHER,1, "§eAgility Ring", "§7Click me to Select.", "\n§Available."));
         // Fire Ring
-        inv.addItem(createGuiItem(12, Material.BLAZE_POWDER, "§eFire Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(12, Material.BLAZE_POWDER,1, "§eFire Ring", "§7Click me to Select.", "\n§Available."));
         // Vision Ring
-        inv.addItem(createGuiItem(13, Material.DIAMOND_HELMET, "§eVision Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(13, Material.DIAMOND_HELMET,1, "§eVision Ring", "§7Click me to Select.", "\n§Available."));
         // Brute Ring
-        inv.addItem(createGuiItem(14, Material.DIAMOND_SWORD, "§eBrute Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(14, Material.DIAMOND_SWORD,1, "§eBrute Ring", "§7Click me to Select.", "\n§Available."));
         // Spring Ring
-        inv.addItem(createGuiItem(15, Material.RABBIT_FOOT, "§eSpring Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(15, Material.RABBIT_FOOT,1, "§eSpring Ring", "§7Click me to Select.", "\n§Available."));
         // Aqua Ring
-        inv.addItem(createGuiItem(16, Material.PUFFERFISH, "§eAqua Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(16, Material.PUFFERFISH,1, "§eAqua Ring", "§7Click me to Select.", "\n§Available."));
         // Remove Effects
-        inv.addItem(createGuiItem(22, Material.POTION, "§cClear Ring", "§7Click me to clear Ring."));
+        inv.addItem(createGuiItem(22, Material.POTION,1, "§cClear Ring", "§7Click me to clear Ring."));
     }
 
-    private ItemStack createGuiItem(int slot, Material material, String name, String...lore) {
+    private ItemStack createGuiItem(int slot, Material material, int amount, String name, String... lore) {
         // Set the Material and amount
-        ItemStack item = new ItemStack(material, 1);
+        ItemStack item = new ItemStack(material, amount);
         // Get the meta of Item.
         ItemMeta meta = item.getItemMeta();
         // Set the name
-        meta.setDisplayName(name);
+        if (meta != null) {
+            meta.setDisplayName(name);
+        }
         // Get ArrayList of Lore with Item Meta?
         ArrayList<String> metalore = new ArrayList<String>();
 
         // For every each lore line add a new line :)
-        for(String lorecomments : lore) {
+        for (String lorecomments : lore) {
             metalore.add(lorecomments);
         }
 
         // Set the lore above
+        assert meta != null;
         meta.setLore(metalore);
         // Complete The Meta.
         item.setItemMeta(meta);
-        inv.setItem(slot, item);
+        // Set the item inside the GUI with the correct slot.
+        inv.setItem(slot, item);;
         return item;
     }
 
@@ -85,22 +95,79 @@ public class RingsMenu implements InventoryHolder, Listener {
             e.setCancelled(true);
         }
 
-        // Cancel Any click event.
-        e.setCancelled(true);
+        // Cancel Any click event
 
-        // Get player who clicked.
+        // Get p who clicked.
         Player p = (Player) e.getWhoClicked();
         // Get the item that was clicked
         ItemStack clickedItem = e.getCurrentItem();
-
         // If clicked item is gone or the item is air
         if (clickedItem == null || clickedItem.getType() == Material.AIR) return;
-        if (e.getRawSlot() == 10) p.sendMessage("You clicked slot " + 10);
-    }
 
-    @NotNull
-    @Override
-    public Inventory getInventory() {
-        return inv;
+        // Plays Bell note at players location
+
+        // if Book is clicked give link to github.
+        if (clickedItem.getType() == Material.KNOWLEDGE_BOOK) {
+            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
+            p.sendMessage(ChatColor.YELLOW + "https://github.com/Oribuin/Rings/");
+        }
+
+        // if ghast tear is clicked applies regeneration effect
+        if (clickedItem.getType() == Material.GHAST_TEAR) {
+            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
+            p.addPotionEffect(PotionEffectType.REGENERATION.createEffect(1000000, 0));
+            p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Healing Ring.");
+        }
+
+        // if feather is clicked applies speed effect
+        if (clickedItem.getType() == Material.FEATHER) {
+            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
+            p.addPotionEffect(PotionEffectType.SPEED.createEffect(1000000, 0));
+            p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Speed Ring.");
+        }
+
+        // if blaze powder is clicked applies fire resistance effect
+        if (clickedItem.getType() == Material.BLAZE_POWDER) {
+            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
+            p.addPotionEffect(PotionEffectType.FIRE_RESISTANCE.createEffect(1000000, 0));
+            p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Fire Ring.");
+        }
+
+        // if diamond helmet is clicked applies night vision effect
+        if (clickedItem.getType() == Material.DIAMOND_HELMET) {
+            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
+            p.addPotionEffect(PotionEffectType.NIGHT_VISION.createEffect(1000000, 0));
+            p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Vision Ring.");
+        }
+
+        // if diamond sword is clicked applies strength effect
+        if (clickedItem.getType() == Material.DIAMOND_SWORD) {
+            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
+            p.addPotionEffect(PotionEffectType.INCREASE_DAMAGE.createEffect(1000000, 0));
+            p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Brute Ring.");
+        }
+
+        // If rabbit's foot is clicked it applies jump boost effect
+        if (clickedItem.getType() == Material.RABBIT_FOOT) {
+            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
+            p.addPotionEffect(PotionEffectType.JUMP.createEffect(1000000, 0));
+            p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Spring Ring.");
+        }
+
+        // if pufferfish is clicked it applies water breathing effect
+        if (clickedItem.getType() == Material.PUFFERFISH) {
+            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
+            p.addPotionEffect(PotionEffectType.WATER_BREATHING.createEffect(1000000, 0));
+            p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Aqua Ring.");
+        }
+
+        /*
+        If potion is clicked just play sound.
+        I will add this later but need the gui working first.
+         */
+        if (clickedItem.getType() == Material.POTION) {
+            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
+            p.sendMessage(ChatColor.YELLOW + p.getName() + ", lol just drink milk.");
+        }
     }
 }
