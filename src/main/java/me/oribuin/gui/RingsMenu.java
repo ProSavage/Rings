@@ -36,19 +36,19 @@ public class RingsMenu implements InventoryHolder, Listener {
         // Info Book
         inv.addItem(createGuiItem(4, Material.KNOWLEDGE_BOOK, "§eInfo Book", "§7Welcome to the Rings Menu.", "§eClick me for more Info!"));
         // Healing Ring
-        inv.addItem(createGuiItem(10, Material.GHAST_TEAR, "§eHealing Ring", "§7Click me to Select.", "\n§aAvailable."));
+        inv.addItem(createGuiItem(10, Material.GHAST_TEAR, "§eHealing Ring", "§7Click me to Select.", "§aAvailable."));
         // Agility Ring
-        inv.addItem(createGuiItem(11, Material.FEATHER, "§eAgility Ring", "§7Click me to Select.", "\n§aAvailable."));
+        inv.addItem(createGuiItem(11, Material.FEATHER, "§eAgility Ring", "§7Click me to Select.", "§aAvailable."));
         // Fire Ring
-        inv.addItem(createGuiItem(12, Material.BLAZE_POWDER, "§eFire Ring", "§7Click me to Select.", "\n§aAvailable."));
+        inv.addItem(createGuiItem(12, Material.BLAZE_POWDER, "§eFire Ring", "§7Click me to Select.", "§aAvailable."));
         // Vision Ring
         inv.addItem(createGuiItem(13, Material.DIAMOND_HELMET, "§eVision Ring", "§7Click me to Select.", "§aAvailable."));
         // Brute Ring
-        inv.addItem(createGuiItem(14, Material.DIAMOND_SWORD, "§eBrute Ring", "§7Click me to Select.", "\n§aAvailable."));
+        inv.addItem(createGuiItem(14, Material.DIAMOND_SWORD, "§eBrute Ring", "§7Click me to Select.", "§aAvailable."));
         // Spring Ring
-        inv.addItem(createGuiItem(15, Material.RABBIT_FOOT, "§eSpring Ring", "§7Click me to Select.", "\n§aAvailable."));
+        inv.addItem(createGuiItem(15, Material.RABBIT_FOOT, "§eSpring Ring", "§7Click me to Select.", "§aAvailable."));
         // Aqua Ring
-        inv.addItem(createGuiItem(16, Material.PUFFERFISH, "§eAqua Ring", "§7Click me to Select.", "\n§aAvailable."));
+        inv.addItem(createGuiItem(16, Material.PUFFERFISH, "§eAqua Ring", "§7Click me to Select.", "§aAvailable."));
         // Remove Effects
         inv.addItem(createGuiItem(22, Material.POTION, "§cClear Ring", "§7Click me to clear Ring."));
     }
