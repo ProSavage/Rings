@@ -33,28 +33,28 @@ public class RingsMenu implements InventoryHolder, Listener {
     @EventHandler
     public void initializeItems() {
         // Info Book
-        inv.addItem(createGuiItem(4, Material.KNOWLEDGE_BOOK,1, "§eInfo Book", "§7Welcome to the Rings Menu.", "§eClick me for more Info!"));
+        inv.addItem(createGuiItem(4, Material.KNOWLEDGE_BOOK, "§eInfo Book", "§7Welcome to the Rings Menu.", "§eClick me for more Info!"));
         // Healing Ring
-        inv.addItem(createGuiItem(10, Material.GHAST_TEAR,1, "§eHealing Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(10, Material.GHAST_TEAR, "§eHealing Ring", "§7Click me to Select.", "\n§aAvailable."));
         // Agility Ring
-        inv.addItem(createGuiItem(11, Material.FEATHER,1, "§eAgility Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(11, Material.FEATHER, "§eAgility Ring", "§7Click me to Select.", "\n§aAvailable."));
         // Fire Ring
-        inv.addItem(createGuiItem(12, Material.BLAZE_POWDER,1, "§eFire Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(12, Material.BLAZE_POWDER, "§eFire Ring", "§7Click me to Select.", "\n§aAvailable."));
         // Vision Ring
-        inv.addItem(createGuiItem(13, Material.DIAMOND_HELMET,1, "§eVision Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(13, Material.DIAMOND_HELMET, "§eVision Ring", "§7Click me to Select.", "§aAvailable."));
         // Brute Ring
-        inv.addItem(createGuiItem(14, Material.DIAMOND_SWORD,1, "§eBrute Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(14, Material.DIAMOND_SWORD, "§eBrute Ring", "§7Click me to Select.", "\n§aAvailable."));
         // Spring Ring
-        inv.addItem(createGuiItem(15, Material.RABBIT_FOOT,1, "§eSpring Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(15, Material.RABBIT_FOOT, "§eSpring Ring", "§7Click me to Select.", "\n§aAvailable."));
         // Aqua Ring
-        inv.addItem(createGuiItem(16, Material.PUFFERFISH,1, "§eAqua Ring", "§7Click me to Select.", "\n§Available."));
+        inv.addItem(createGuiItem(16, Material.PUFFERFISH, "§eAqua Ring", "§7Click me to Select.", "\n§aAvailable."));
         // Remove Effects
-        inv.addItem(createGuiItem(22, Material.POTION,1, "§cClear Ring", "§7Click me to clear Ring."));
+        inv.addItem(createGuiItem(22, Material.POTION, "§cClear Ring", "§7Click me to clear Ring."));
     }
 
-    private ItemStack createGuiItem(int slot, Material material, int amount, String name, String... lore) {
+    private ItemStack createGuiItem(int slot, Material material, String name, String... lore) {
         // Set the Material and amount
-        ItemStack item = new ItemStack(material, amount);
+        ItemStack item = new ItemStack(material, 1);
         // Get the meta of Item.
         ItemMeta meta = item.getItemMeta();
         // Set the name
@@ -96,6 +96,7 @@ public class RingsMenu implements InventoryHolder, Listener {
         }
 
         // Cancel Any click event
+        e.setCancelled(true);
 
         // Get p who clicked.
         Player p = (Player) e.getWhoClicked();
@@ -105,7 +106,6 @@ public class RingsMenu implements InventoryHolder, Listener {
         if (clickedItem == null || clickedItem.getType() == Material.AIR) return;
 
         // Plays Bell note at players location
-
         // if Book is clicked give link to github.
         if (clickedItem.getType() == Material.KNOWLEDGE_BOOK) {
             p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
@@ -161,13 +161,13 @@ public class RingsMenu implements InventoryHolder, Listener {
             p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Aqua Ring.");
         }
 
-        /*
-        If potion is clicked just play sound.
-        I will add this later but need the gui working first.
-         */
+        //If potion is clicked just play sound.
+        //I will add this later but need the gui working first.
+
         if (clickedItem.getType() == Material.POTION) {
             p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
             p.sendMessage(ChatColor.YELLOW + p.getName() + ", lol just drink milk.");
         }
+        e.setCancelled(true);
     }
 }

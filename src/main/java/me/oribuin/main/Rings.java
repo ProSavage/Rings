@@ -10,17 +10,16 @@ public class Rings extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getConsoleSender().sendMessage(ChatColor.WHITE + "=============================" +
+        Bukkit.getConsoleSender().sendMessage(ChatColor.WHITE + "=============================\n" +
                 ChatColor.YELLOW + "Plugin: " + ChatColor.WHITE + "Rings \n" +
                 ChatColor.YELLOW + "Version: " + ChatColor.WHITE + "1.0.0 \n" +
                 ChatColor.YELLOW + "Author: " + ChatColor.WHITE + "Oribuin \n" +
                 ChatColor.WHITE + "=============================");
 
-        getCommand("Rings").setExecutor(new Rings());
+        getCommand("Rings").setExecutor(new RingsCommand());
         RingsMenu menu = new RingsMenu();
 
         Bukkit.getPluginManager().registerEvents(menu, this);
-        menu.initializeItems();
 
     }
 
