@@ -19,9 +19,10 @@ public class RingsCommand implements CommandExecutor {
 
             // Create Menu variable
             RingsMenu menu = new RingsMenu();
-            // Open the GUI
+            // Add items
             menu.initializeItems();
 
+            // Open the GUI
             menu.onInventory(player);
             // If sender isn't a player
         } else {

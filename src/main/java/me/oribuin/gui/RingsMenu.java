@@ -14,6 +14,7 @@ import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 // Implements stuffs :)
 public class RingsMenu implements InventoryHolder, Listener {
@@ -62,12 +63,9 @@ public class RingsMenu implements InventoryHolder, Listener {
             meta.setDisplayName(name);
         }
         // Get ArrayList of Lore with Item Meta?
-        ArrayList<String> metalore = new ArrayList<String>();
 
         // For every each lore line add a new line :)
-        for (String lorecomments : lore) {
-            metalore.add(lorecomments);
-        }
+        ArrayList<String> metalore = new ArrayList<String>(Arrays.asList(lore));
 
         // Set the lore above
         assert meta != null;
