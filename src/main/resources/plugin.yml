@@ -9,7 +9,3 @@ commands:
     permission: rings.open
     usage: /rings
     description: Opens the Rings Menu.
-  Test:
-    permission: test.use
-    usage: /test
-    description: Opens the Test Menu.
