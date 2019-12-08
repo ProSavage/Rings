@@ -105,57 +105,49 @@ public class RingsMenu implements InventoryHolder, Listener {
         // if Book is clicked give link to github.
         if (clickedItem.getType() == Material.KNOWLEDGE_BOOK) {
 
-            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
             p.sendMessage(ChatColor.YELLOW + "https://github.com/Oribuin/Rings/");
-            e.setCancelled(true);
 
         } else if (clickedItem.getType() == Material.GHAST_TEAR) {
 
-            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
             p.addPotionEffect(PotionEffectType.REGENERATION.createEffect(1000000, 0));
             p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Healing Ring.");
-            e.setCancelled(true);
+
         } else if (clickedItem.getType() == Material.FEATHER) {
 
-            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
             p.addPotionEffect(PotionEffectType.SPEED.createEffect(1000000, 0));
             p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Speed Ring.");
-            e.setCancelled(true);
+
         } else if (clickedItem.getType() == Material.BLAZE_POWDER) {
 
-            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
             p.addPotionEffect(PotionEffectType.FIRE_RESISTANCE.createEffect(1000000, 0));
             p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Fire Ring.");
-            e.setCancelled(true);
+
         } else if (clickedItem.getType() == Material.DIAMOND_HELMET) {
 
-            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
             p.addPotionEffect(PotionEffectType.NIGHT_VISION.createEffect(1000000, 0));
             p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Vision Ring.");
-            e.setCancelled(true);
+
         } else if (clickedItem.getType() == Material.DIAMOND_SWORD) {
 
-            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
             p.addPotionEffect(PotionEffectType.INCREASE_DAMAGE.createEffect(1000000, 0));
             p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Brute Ring.");
-            e.setCancelled(true);
+
         } else if (clickedItem.getType() == Material.RABBIT_FOOT) {
 
-            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
             p.addPotionEffect(PotionEffectType.JUMP.createEffect(1000000, 0));
             p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Spring Ring.");
-            e.setCancelled(true);
+
         } else if (clickedItem.getType() == Material.PUFFERFISH) {
 
-            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
             p.addPotionEffect(PotionEffectType.WATER_BREATHING.createEffect(1000000, 0));
             p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Aqua Ring.");
-            e.setCancelled(true);
+
         } else if (clickedItem.getType() == Material.POTION) {
 
-            p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
             p.sendMessage(ChatColor.YELLOW + p.getName() + ", lol just drink milk.");
-            e.setCancelled(true);
         }
+
+        p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
+        e.setCancelled(true);
     }
 }
