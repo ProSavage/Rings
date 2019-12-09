@@ -18,7 +18,7 @@ public class RingsCommand implements CommandExecutor {
             Player player = (Player) sender;
 
             // Create Menu variable
-            RingsMenu menu = new RingsMenu();
+            RingsMenu menu = RingsMenu.getInstance();
             // Add items
             menu.initializeItems();
 

@@ -16,17 +16,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 // Implements stuffs :)
-public class RingsMenu implements InventoryHolder, Listener {
+public class RingsMenu implements Listener {
+    private static RingsMenu INSTANCE;
     private final Inventory inv;
 
-    public RingsMenu() {
+    private RingsMenu() {
         // Create GUI with Size and Name.
-        inv = Bukkit.createInventory(this, 27, ChatColor.DARK_GRAY + "Rings Plugin by Oribuin.");
+        inv = Bukkit.createInventory(null, 27, ChatColor.DARK_GRAY + "Rings Plugin by Oribuin.");
     }
 
-    @Override
-    public Inventory getInventory() {
-        return inv;
+    public static RingsMenu getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new RingsMenu();
+        }
+        return INSTANCE;
     }
 
     @EventHandler
@@ -85,7 +88,7 @@ public class RingsMenu implements InventoryHolder, Listener {
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
 
-        if (e.getInventory().getHolder() != inv.getHolder()) {
+        if (e.getView().getTopInventory() != inv) {
             return;
         }
         // If you try to quick grab items using number keys cancel it
@@ -111,7 +114,7 @@ public class RingsMenu implements InventoryHolder, Listener {
             p.addPotionEffect(PotionEffectType.REGENERATION.createEffect(1000000, 0));
             p.sendMessage("§8[§bRings§8] §7You have equipped the §eHealing§7 Ring.");
 
-            Boolean regen = true;
+            boolean regen = true;
 
         } else if (clickedItem.getType() == Material.FEATHER) {
 

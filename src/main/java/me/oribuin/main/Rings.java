@@ -17,7 +17,7 @@ public class Rings extends JavaPlugin {
                 ChatColor.WHITE + "=============================");
 
         getCommand("Rings").setExecutor(new RingsCommand());
-        RingsMenu menu = new RingsMenu();
+        RingsMenu menu = RingsMenu.getInstance();
 
         Bukkit.getPluginManager().registerEvents(menu, this);
 
