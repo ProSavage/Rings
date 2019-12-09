@@ -11,7 +11,6 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffectType;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +24,6 @@ public class RingsMenu implements InventoryHolder, Listener {
         inv = Bukkit.createInventory(this, 27, ChatColor.DARK_GRAY + "Rings Plugin by Oribuin.");
     }
 
-    @NotNull
     @Override
     public Inventory getInventory() {
         return inv;
@@ -62,8 +60,8 @@ public class RingsMenu implements InventoryHolder, Listener {
         if (meta != null) {
             meta.setDisplayName(name);
         }
-        // Get ArrayList of Lore with Item Meta?
 
+        // Get ArrayList of Lore with Item Meta
         // For every each lore line add a new line :)
         ArrayList<String> metalore = new ArrayList<String>(Arrays.asList(lore));
 
@@ -71,6 +69,7 @@ public class RingsMenu implements InventoryHolder, Listener {
         if (meta != null) {
             meta.setLore(metalore);
         }
+
         // Complete The Meta.
         item.setItemMeta(meta);
 
@@ -85,8 +84,8 @@ public class RingsMenu implements InventoryHolder, Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e) {
-        // Gets the block or entity belonging to open inventory
-        if (e.getInventory().getHolder() != this) {
+
+        if (e.getInventory().getHolder() != inv.getHolder()) {
             return;
         }
         // If you try to quick grab items using number keys cancel it
@@ -105,48 +104,51 @@ public class RingsMenu implements InventoryHolder, Listener {
         // if Book is clicked give link to github.
         if (clickedItem.getType() == Material.KNOWLEDGE_BOOK) {
 
-            p.sendMessage(ChatColor.YELLOW + "https://github.com/Oribuin/Rings/");
+            p.sendMessage("§ehttps://github.com/§6Oribuin§e/Rings/");
 
         } else if (clickedItem.getType() == Material.GHAST_TEAR) {
 
             p.addPotionEffect(PotionEffectType.REGENERATION.createEffect(1000000, 0));
-            p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Healing Ring.");
+            p.sendMessage("§8[§bRings§8] §7You have equipped the §eHealing§7 Ring.");
+
+            Boolean regen = true;
 
         } else if (clickedItem.getType() == Material.FEATHER) {
 
             p.addPotionEffect(PotionEffectType.SPEED.createEffect(1000000, 0));
-            p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Speed Ring.");
+            p.sendMessage("§8[§bRings§8] §7You have equipped the §eSpeed§7 Ring.");
 
         } else if (clickedItem.getType() == Material.BLAZE_POWDER) {
 
             p.addPotionEffect(PotionEffectType.FIRE_RESISTANCE.createEffect(1000000, 0));
-            p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Fire Ring.");
+            p.sendMessage("§8[§bRings§8] §7You have equipped the §eFire§7 Ring.");
 
         } else if (clickedItem.getType() == Material.DIAMOND_HELMET) {
 
             p.addPotionEffect(PotionEffectType.NIGHT_VISION.createEffect(1000000, 0));
-            p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Vision Ring.");
+            p.sendMessage("§8[§bRings§8] §7You have equipped the §eVision§7 Ring.");
 
         } else if (clickedItem.getType() == Material.DIAMOND_SWORD) {
 
             p.addPotionEffect(PotionEffectType.INCREASE_DAMAGE.createEffect(1000000, 0));
-            p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Brute Ring.");
+            p.sendMessage("§8[§bRings§8] §7You have equipped the §eBrute§7 Ring.");
 
         } else if (clickedItem.getType() == Material.RABBIT_FOOT) {
 
             p.addPotionEffect(PotionEffectType.JUMP.createEffect(1000000, 0));
-            p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Spring Ring.");
+            p.sendMessage("§8[§bRings§8] §7You have equipped the §eSpring§7 Ring.");
 
         } else if (clickedItem.getType() == Material.PUFFERFISH) {
 
             p.addPotionEffect(PotionEffectType.WATER_BREATHING.createEffect(1000000, 0));
-            p.sendMessage(ChatColor.YELLOW + p.getName() + ", You have equipped the Aqua Ring.");
+            p.sendMessage("§8[§bRings§8] §7You have equipped the §eAqua§7 Ring.");
 
         } else if (clickedItem.getType() == Material.POTION) {
 
-            p.sendMessage(ChatColor.YELLOW + p.getName() + ", lol just drink milk.");
+            p.sendMessage("§6lol just drink milk.");
         }
 
+        p.closeInventory();
         p.playNote(p.getLocation(), Instrument.BELL, Note.natural(1, Note.Tone.A));
         e.setCancelled(true);
     }
