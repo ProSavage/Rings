@@ -1,0 +1,10 @@
+
+src/main/java/me/oribuin/items/SpeedRing.java
+src/main/java/me/oribuin/items/HealingRing.java
+src/main/java/me/oribuin/items/BruteRing.java
+src/main/java/me/oribuin/items/AquaRing.java
+src/main/java/me/oribuin/items/FireRing.java
+src/main/java/me/oribuin/items/StrengthRing.java
+src/main/java/me/oribuin/items/VisionRing.java
+src/main/resources/oldRingsMenu
+*.jar
