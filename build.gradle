@@ -1,9 +1,10 @@
 plugins {
     id 'java'
+    id 'com.github.johnrengelman.shadow' version '5.1.0'
 }
 
-group 'Rings'
-version '1.0-SNAPSHOT'
+group 'me.oribuin.rings'
+version '1.0'
 
 sourceCompatibility = 1.8
 
@@ -12,16 +13,33 @@ repositories {
     jcenter()
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
-
-        content {
-            includeGroup 'org.bukkit'
-            includeGroup 'org.spigotmc'
-        }
     }
     maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven {
+        url 'https://nexus.illyria.io/repository/maven-public/'
+    }
     mavenLocal()
 }
 
 dependencies {
-    compileOnly 'org.spigotmc:spigot-api:1.14.4-R0.1-SNAPSHOT'
+    compileOnly("org.spigotmc:spigot-api:1.14.2-R0.1-SNAPSHOT") {
+        exclude group: 'net.md-5', module: 'bungeecord-chat'
+        exclude group: 'javax.persistence', module: 'persistence-api'
+        exclude group: 'junit', module: 'junit'
+        exclude group: 'com.google.guava', module: 'guava'
+        exclude group: 'com.google.code.gson', module: 'gson'
+    }
+    compile 'com.github.stefvanschie.inventoryframework:IF:0.5.13'
+    implementation 'net.prosavage:BasePlugin:1.5.1'
+
+
+}
+
+shadowJar {
+    mergeServiceFiles()
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    relocate 'net.prosavage.baseplugin', 'me.oribuin.rings.shade.baseplugin'
+    relocate 'com.github.stefvanschie.inventoryframework', 'me.oribuin.rings.shade.stefvanschie.inventoryframework'
+    archiveName 'Rings.jar'
 }
