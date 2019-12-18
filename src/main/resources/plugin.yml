@@ -1,5 +1,5 @@
 name: Rings
-main: me.oribuin.main.Rings
+main: me.oribuin.rings.Rings
 version: 1.0.0
 author: Oribuin
 api-version: 1.13

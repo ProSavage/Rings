@@ -6,7 +6,20 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ab4de3c-0bc1-4eec-93e8-a557c259c105" name="Default Changelist" comment="" />
+    <list default="true" id="2ab4de3c-0bc1-4eec-93e8-a557c259c105" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Rings.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/oribuin/commands/RingsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/oribuin/rings/commands/RingsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/oribuin/gui/RingsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/oribuin/rings/gui/RingsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/oribuin/main/Rings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/oribuin/rings/Rings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/oribuin/main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/oribuin/rings/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/oribuin/utils/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/oribuin/rings/utils/Methods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +37,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1U5f9KQZuIVwzATWsItHEyCZ2D8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -39,6 +55,9 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../FactionsCore" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.16202784" />
@@ -52,24 +71,24 @@
       <recent name="C:\Users\epics\Desktop\Rings\src\main\java\me\oribuin\main" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="JarApplication" nameIsGenerated="true">
       <option name="WORKING_DIRECTORY" value="C:\Users\epics\Desktop\Rings" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2" />
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -81,8 +100,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574651223063</updated>
+      <workItem from="1576637322890" duration="323000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="-1214" y="309" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576540379537">

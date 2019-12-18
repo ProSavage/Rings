@@ -1,14 +1,10 @@
-package me.oribuin.main;
+package me.oribuin.rings;
 
-import me.oribuin.gui.RingsMenu;
 import org.bukkit.Material;
-import org.bukkit.block.Block;
-import org.bukkit.entity.Item;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.inventory.Inventory;
 
 public class Test implements Listener {
     private static Test INSTANCE;

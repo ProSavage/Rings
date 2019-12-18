@@ -1,6 +1,6 @@
-package me.oribuin.gui;
+package me.oribuin.rings.gui;
 
-import me.oribuin.utils.Methods;
+import me.oribuin.rings.utils.Methods;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

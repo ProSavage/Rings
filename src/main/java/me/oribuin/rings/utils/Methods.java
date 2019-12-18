@@ -1,4 +1,4 @@
-package me.oribuin.utils;
+package me.oribuin.rings.utils;
 
 import org.bukkit.ChatColor;
 

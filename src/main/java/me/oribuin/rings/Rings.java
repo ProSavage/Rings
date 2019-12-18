@@ -1,7 +1,7 @@
-package me.oribuin.main;
+package me.oribuin.rings;
 
-import me.oribuin.commands.RingsCommand;
-import me.oribuin.gui.RingsMenu;
+import me.oribuin.rings.commands.RingsCommand;
+import me.oribuin.rings.gui.RingsMenu;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
