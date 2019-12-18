@@ -7,17 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ab4de3c-0bc1-4eec-93e8-a557c259c105" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Rings.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/oribuin/commands/RingsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/oribuin/rings/commands/RingsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/oribuin/gui/RingsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/oribuin/rings/gui/RingsMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/oribuin/main/Rings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/oribuin/rings/Rings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/oribuin/main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/oribuin/rings/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/oribuin/utils/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/oribuin/rings/utils/Methods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/oribuin/rings/gui/RingsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/oribuin/rings/gui/RingsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/oribuin/rings/utils/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/oribuin/rings/utils/ChatUtil.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,8 +91,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574651223063</updated>
-      <workItem from="1576637322890" duration="323000" />
+      <workItem from="1576637322890" duration="567000" />
     </task>
+    <task id="LOCAL-00001" summary="Refactor the whole thing and make it more meta.">
+      <created>1576637661370</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576637661370</updated>
+    </task>
+    <task id="LOCAL-00002" summary="git dotfiles to remove random stuff.">
+      <created>1576637852934</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576637852934</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +123,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactor the whole thing and make it more meta." />
+    <MESSAGE value="git dotfiles to remove random stuff." />
+    <option name="LAST_COMMIT_MESSAGE" value="git dotfiles to remove random stuff." />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1214" y="309" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1576540379537">

@@ -1,6 +1,6 @@
 package me.oribuin.rings.gui;
 
-import me.oribuin.rings.utils.Methods;
+import me.oribuin.rings.utils.ChatUtil;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -116,11 +116,11 @@ public class RingsMenu implements Listener {
 
             // Send link to github
             if (e.getClick().isLeftClick()) {
-                player.sendMessage(Methods.pl("Coming Soon <3"));
+                player.sendMessage(ChatUtil.color("Coming Soon <3"));
             }
 
             if (e.getClick().isRightClick()) {
-                player.sendMessage(Methods.pl("&ehttps://github.com/Oribuin&e/Rings/"));
+                player.sendMessage(ChatUtil.color("&ehttps://github.com/Oribuin&e/Rings/"));
             }
             // if they click the ghast tear
         } else if (clickedItem.getType() == Material.GHAST_TEAR) {
@@ -132,11 +132,11 @@ public class RingsMenu implements Listener {
                 // remove particle effect
                 player.removePotionEffect(PotionEffectType.REGENERATION);
                 // tell them it was removed
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have cleared your &eHealing&7 Ring!"));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have cleared your &eHealing&7 Ring!"));
             } else {
                 // add ring effect
                 player.addPotionEffect(PotionEffectType.REGENERATION.createEffect(1000000, 0));
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have equipped the &eHealing&7 Ring."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have equipped the &eHealing&7 Ring."));
             }
 
         } else if (clickedItem.getType() == Material.FEATHER) {
@@ -144,10 +144,10 @@ public class RingsMenu implements Listener {
                 speedRing.remove(player.getUniqueId());
                 // remove ring effect
                 player.removePotionEffect(PotionEffectType.SPEED);
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have cleared your &eAgility&7 Ring!"));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have cleared your &eAgility&7 Ring!"));
             } else {
                 player.addPotionEffect(PotionEffectType.SPEED.createEffect(1000000, 0));
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have equipped the &eAgility&7 Ring."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have equipped the &eAgility&7 Ring."));
 
                 speedRing.add(player.getUniqueId());
 
@@ -156,10 +156,10 @@ public class RingsMenu implements Listener {
             if (fireRing.contains(player.getUniqueId())) {
                 fireRing.remove(player.getUniqueId());
                 player.removePotionEffect(PotionEffectType.FIRE_RESISTANCE);
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have cleared your &eFire&7 Ring!"));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have cleared your &eFire&7 Ring!"));
             } else {
                 player.addPotionEffect(PotionEffectType.FIRE_RESISTANCE.createEffect(1000000, 0));
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have equipped the &eFire&7 Ring."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have equipped the &eFire&7 Ring."));
 
                 fireRing.add(player.getUniqueId());
             }
@@ -167,10 +167,10 @@ public class RingsMenu implements Listener {
             if (visionRing.contains(player.getUniqueId())) {
                 visionRing.remove(player.getUniqueId());
                 player.removePotionEffect(PotionEffectType.NIGHT_VISION);
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have cleared your &eVision&7 Ring!"));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have cleared your &eVision&7 Ring!"));
             } else {
                 player.addPotionEffect(PotionEffectType.NIGHT_VISION.createEffect(1000000, 0));
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have equipped the &eVision&7 Ring."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have equipped the &eVision&7 Ring."));
 
                 visionRing.add(player.getUniqueId());
             }
@@ -179,10 +179,10 @@ public class RingsMenu implements Listener {
                 strengthRing.remove(player.getUniqueId());
                 // remove ring effect
                 player.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have cleared your &eBrute&7 Ring!"));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have cleared your &eBrute&7 Ring!"));
             } else {
                 player.addPotionEffect(PotionEffectType.INCREASE_DAMAGE.createEffect(1000000, 0));
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have equipped the &eBrute&7 Ring."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have equipped the &eBrute&7 Ring."));
 
                 strengthRing.add(player.getUniqueId());
             }
@@ -192,11 +192,11 @@ public class RingsMenu implements Listener {
                 springRing.remove(player.getUniqueId());
                 // remove ring effect
                 player.removePotionEffect(PotionEffectType.JUMP);
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have cleared your &eSpring&7 Ring!"));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have cleared your &eSpring&7 Ring!"));
 
             } else {
                 player.addPotionEffect(PotionEffectType.JUMP.createEffect(1000000, 0));
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have equipped the &eSpring&7 Ring."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have equipped the &eSpring&7 Ring."));
                 springRing.add(player.getUniqueId());
             }
 
@@ -206,10 +206,10 @@ public class RingsMenu implements Listener {
                 // remove ring effect
 
                 player.removePotionEffect(PotionEffectType.WATER_BREATHING);
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have cleared your &eAqua&7 Ring!"));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have cleared your &eAqua&7 Ring!"));
             } else {
                 player.addPotionEffect(PotionEffectType.WATER_BREATHING.createEffect(1000000, 0));
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have equipped the &eAqua&7 Ring."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have equipped the &eAqua&7 Ring."));
 
                 waterRing.add(player.getUniqueId());
             }
@@ -217,33 +217,33 @@ public class RingsMenu implements Listener {
             if (regenRing.contains(player.getUniqueId())) {
                 regenRing.remove(player.getUniqueId());
                 player.removePotionEffect(PotionEffectType.HEAL);
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have cleared your &eHealing&7 ring."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have cleared your &eHealing&7 ring."));
             } else if (speedRing.contains(player.getUniqueId())) {
                 speedRing.remove(player.getUniqueId());
                 player.removePotionEffect(PotionEffectType.SPEED);
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have cleared your &eAgility&7 ring."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have cleared your &eAgility&7 ring."));
             } else if (fireRing.contains(player.getUniqueId())) {
                 fireRing.remove(player.getUniqueId());
                 player.removePotionEffect(PotionEffectType.FIRE_RESISTANCE);
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have cleared your &eFire&7 ring."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have cleared your &eFire&7 ring."));
             } else if (visionRing.contains(player.getUniqueId())) {
                 visionRing.remove(player.getUniqueId());
                 player.removePotionEffect(PotionEffectType.NIGHT_VISION);
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have cleared your &eVision&7 ring."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have cleared your &eVision&7 ring."));
             } else if (strengthRing.contains(player.getUniqueId())) {
                 strengthRing.remove(player.getUniqueId());
                 player.removePotionEffect(PotionEffectType.INCREASE_DAMAGE);
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have cleared your &eBrute&7 ring."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have cleared your &eBrute&7 ring."));
             } else if (springRing.contains(player.getUniqueId())) {
                 springRing.remove(player.getUniqueId());
                 player.removePotionEffect(PotionEffectType.JUMP);
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have cleared your &eSpring&7 ring."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have cleared your &eSpring&7 ring."));
             } else if (waterRing.contains(player.getUniqueId())) {
                 waterRing.remove(player.getUniqueId());
                 player.removePotionEffect(PotionEffectType.WATER_BREATHING);
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You have cleared your &eAqua&7 ring."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You have cleared your &eAqua&7 ring."));
             } else {
-                player.sendMessage(Methods.pl("&8[&bRings&8] &7You do not have any active Rings."));
+                player.sendMessage(ChatUtil.color("&8[&bRings&8] &7You do not have any active Rings."));
             }
         }
 
